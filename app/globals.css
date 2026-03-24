@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Playfair Display", serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-mono: "DM Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0d0f14;
+  color: #f0ebe1;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0f14;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2f3d;
+  border-radius: 2px;
+}
+
+/* Noise texture overlay for depth */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+/* Animate on load utility */
+.animate-fade-up {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Horizontal rule style */
+.hr-wire {
+  border: none;
+  border-top: 1px solid #2a2f3d;
+}
+
+/* Prose styling for blog content */
+.prose-dark {
+  color: #c8c0b4;
+  line-height: 1.85;
+}
+.prose-dark h1,
+.prose-dark h2,
+.prose-dark h3 {
+  color: #f0ebe1;
+  font-family: var(--font-display);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.prose-dark h2 { font-size: 1.5rem; }
+.prose-dark h3 { font-size: 1.2rem; }
+.prose-dark p  { margin-bottom: 1.25rem; }
+.prose-dark a  { color: #e8622a; text-decoration: underline; }
+.prose-dark code {
+  font-family: var(--font-mono);
+  background: #1e2330;
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  color: #ff7a42;
+}
+.prose-dark pre {
+  background: #161920;
+  border: 1px solid #2a2f3d;
+  border-radius: 6px;
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+.prose-dark pre code {
+  background: none;
+  padding: 0;
+  color: #c8c0b4;
+}
+.prose-dark ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+.prose-dark ol { list-style: decimal; padding-left: 1.5rem; margin-bottom: 1rem; }
+.prose-dark li { margin-bottom: 0.4rem; }
+.prose-dark blockquote {
+  border-left: 3px solid #e8622a;
+  padding-left: 1rem;
+  color: #8a8278;
+  font-style: italic;
+  margin: 1.5rem 0;
+}
+
+/* Tag badge */
+.tag {
+  display: inline-block;
+  padding: 2px 10px;
+  background: #1e2330;
+  border: 1px solid #2a2f3d;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: #8a8278;
+  letter-spacing: 0.05em;
+}
+
+/* Accent button */
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.4rem;
+  background: #e8622a;
+  color: #f0ebe1;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  border-radius: 3px;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.btn-accent:hover {
+  background: #ff7a42;
+  transform: translateY(-1px);
+}
+
+/* Ghost button */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.3rem;
+  background: transparent;
+  color: #c8c0b4;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  border: 1px solid #2a2f3d;
+  border-radius: 3px;
+  transition: border-color 0.2s, color 0.2s, transform 0.15s;
+}
+.btn-ghost:hover {
+  border-color: #c8c0b4;
+  color: #f0ebe1;
+  transform: translateY(-1px);
+}

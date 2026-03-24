@@ -3,7 +3,7 @@ import { ArrowRight, Download } from "lucide-react";
 import { SKILL_GROUPS } from "@/lib/data";
 
 export const metadata = {
-  title: "Alex Dev — Full-Stack Developer",
+  title: "Shiva Dev — Full-Stack Developer",
   description:
     "Full-stack developer specialising in React, Next.js, and scalable backend systems.",
 };

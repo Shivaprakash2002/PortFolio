@@ -58,7 +58,7 @@ export default function AdminLayout({
         {/* Logo */}
         <div className="h-14 flex items-center px-5 border-b border-wire">
           <span className="font-display text-cream text-lg">
-            alex<span className="text-accent">.</span>admin
+            shiva<span className="text-accent">.</span>admin
           </span>
         </div>
 

@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return { title: "Post not found" };
 
   return {
-    title: `${post.title} — Alex Dev`,
+    title: `${post.title} — Shiva Dev`,
     description: post.excerpt,
   };
 }
@@ -105,7 +105,7 @@ export default async function BlogPostPage({ params }: Props) {
         >
           <ArrowLeft size={13} /> All posts
         </Link>
-        <p className="font-mono text-xs text-cream-muted">alex.dev</p>
+        <p className="font-mono text-xs text-cream-muted">shiva.dev</p>
       </div>
     </div>
   );

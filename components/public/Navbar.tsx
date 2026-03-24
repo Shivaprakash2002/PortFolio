@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
   { href: "/blog", label: "Blog" },
-  { href: "/admin", label : "Admin"}
+  { href: "/admin/dashboard", label: "Admin" }
 ];
 
 export default function Navbar() {
@@ -33,11 +33,10 @@ export default function Navbar() {
               <li key={href}>
                 <Link
                   href={href}
-                  className={`font-mono text-xs tracking-widest uppercase px-4 py-2 rounded-sm transition-colors ${
-                    isActive
+                  className={`font-mono text-xs tracking-widest uppercase px-4 py-2 rounded-sm transition-colors ${isActive
                       ? "text-cream bg-ink-muted"
                       : "text-cream-muted hover:text-cream"
-                  }`}
+                    }`}
                 >
                   {label}
                 </Link>

@@ -1,4 +1,4 @@
-# Alex Dev — Personal Portfolio & Blog
+# Shiva Dev — Personal Portfolio & Blog
 
 A personal portfolio website with a full blog management system built with **Next.js 14 (App Router)**, **Supabase**, and **Tailwind CSS**.
 
